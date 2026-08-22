@@ -149,11 +149,6 @@ const PORTFOLIO_DATA = {
   ]
 };
 
-// Export to make it accessible to modules if needed, otherwise assign globally
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = PORTFOLIO_DATA;
-} else {
-  window.PORTFOLIO_DATA = PORTFOLIO_DATA;
-}
-
+// Keep the data available to the legacy detail script while React imports it directly.
+window.PORTFOLIO_DATA = PORTFOLIO_DATA;
 export default PORTFOLIO_DATA;
