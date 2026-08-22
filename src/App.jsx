@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const data = window.PORTFOLIO_DATA;
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 function Icon({ name }) {
   return <i className={`fa-solid fa-${name}`} aria-hidden="true" />;

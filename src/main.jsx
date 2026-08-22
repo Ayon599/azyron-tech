@@ -8,3 +8,14 @@ createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
+const deploymentBase = import.meta.env.BASE_URL;
+const fixAssetPaths = () => {
+  document.querySelectorAll("img[src^='/assets/'], a[href^='/assets/']").forEach(element => {
+    const attribute = element.tagName === "IMG" ? "src" : "href";
+    element.setAttribute(attribute, `${deploymentBase}${element.getAttribute(attribute).slice(8)}`);
+  });
+};
+
+new MutationObserver(fixAssetPaths).observe(document.getElementById("root"), { childList: true, subtree: true });
+fixAssetPaths();
