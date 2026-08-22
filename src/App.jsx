@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import PORTFOLIO_DATA from "../js/data.js";
 
-const data = window.PORTFOLIO_DATA;
+const data = PORTFOLIO_DATA;
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 function Icon({ name }) {

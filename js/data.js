@@ -155,3 +155,5 @@ if (typeof module !== 'undefined' && module.exports) {
 } else {
   window.PORTFOLIO_DATA = PORTFOLIO_DATA;
 }
+
+export default PORTFOLIO_DATA;
