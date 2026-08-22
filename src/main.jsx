@@ -13,7 +13,7 @@ const deploymentBase = import.meta.env.BASE_URL;
 const fixAssetPaths = () => {
   document.querySelectorAll("img[src^='/assets/'], a[href^='/assets/']").forEach(element => {
     const attribute = element.tagName === "IMG" ? "src" : "href";
-    element.setAttribute(attribute, `${deploymentBase}${element.getAttribute(attribute).slice(8)}`);
+    element.setAttribute(attribute, `${deploymentBase}${element.getAttribute(attribute).slice(1)}`);
   });
 };
 
